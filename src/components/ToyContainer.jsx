@@ -1,10 +1,11 @@
 import React from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer({ toys, onUpdateToy, onDelete }) {
+// Make sure { toys, onUpdateToy, onDeleteToy } are all included here:
+function ToyContainer({ toys = [], onUpdateToy, onDeleteToy }) {
   return (
-    <div id="toy-collection">{/* Render the collection of ToyCards */}
-     {toys.map((toy) => (
+    <div id="toy-collection">
+      {toys.map((toy) => (
         <ToyCard
           key={toy.id}
           toy={toy}
